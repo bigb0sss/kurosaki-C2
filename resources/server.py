@@ -19,10 +19,10 @@ from shutil import rmtree
 listeners = OrderedDict()  # OrderedDirct preserves the order of inserted keys
 
 class Listener:
-    def __init__(self, name, ipAddress, port):
+    def __init__(self, name, port, ipAddress):
         self.name           = name
-        self.ipAddress      = ipAddress
         self.port           = port
+        self.ipAddress      = ipAddress
         self.isRunning      = False
 
         self.listenerPath   = f'db/listener/{self.name}/'
@@ -86,7 +86,10 @@ class Listener:
 
     # Running server
     def run(self):
-        self.app.run(port=self.port, host=self.ip)
+        self.app.logger.disabled = True
+        host = str(self.ipAddress)
+        port = int(self.port)
+        self.app.run(host, port, debug=False)
 
     # Set flag
     def flag(self):
