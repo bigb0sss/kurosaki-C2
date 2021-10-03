@@ -87,9 +87,7 @@ class Listener:
     # Running server
     def run(self):
         self.app.logger.disabled = True
-        host = str(self.ipAddress)
-        port = int(self.port)
-        self.app.run(host, port, debug=False)
+        self.app.run(host=self.ipAddress, port=self.port, debug=False)
 
     # Set flag
     def flag(self):
@@ -149,14 +147,14 @@ def listListener():
     if checkListenerEmpty(1) == False:
         success("Active listeners: ")
         print("-" * 90)
-        print('| {:<30} | {:<25} | {:<25} |'.format("Listner Name", "IP:Port", "Status"))
+        print('| {:<30} | {:<25} | {:<25} | {:<25} |'.format("Listner Name", "IP", "Port", "Status"))
         print("-" * 90)
         for i in listeners:
             if listeners[i].isRunning == True:
                 status = "Active"
             else:
                 status = "Stopped"
-            print('| {:<30} | {}:{:<22} | {:<25} |'.format(listeners[i].name, listeners[i].ipAddress, str(listeners[i].port), status))
+            print('| {:<30} | {:<22} | {:<25} | {:<25} |'.format(listeners[i].name, listeners[i].ipAddress, str(listeners[i].port), status))
         print("-" * 90)
 
 # Start listeners
@@ -233,13 +231,15 @@ def removeListener(args):
             for i in listenersBeacon:
                 removeBeacon([i])
 
-            rmtree(listeners[name].Path)
+            rmtree(listeners[name].listenerPath)
 
             if listeners[name].isRunning == True:
                 stopListener([name])
                 del listeners[name]
+                success("listener succssfully removed!")
             else:
                 del listeners[name]
+                success("listener succssfully removed!")
         else:
             pass
 
