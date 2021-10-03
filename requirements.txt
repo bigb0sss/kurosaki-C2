@@ -1,0 +1,4 @@
+flask
+netifaces==0.11.0
+readline
+pycrypto==2.6.1
