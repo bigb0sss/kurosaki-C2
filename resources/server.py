@@ -87,7 +87,7 @@ class Listener:
     # Running server
     def run(self):
         self.app.logger.disabled = True
-        self.app.run(host=self.ipAddress, port=self.port, debug=False)
+        self.app.run(host=self.ipAddress, port=self.port)
 
     # Set flag
     def flag(self):
@@ -146,16 +146,16 @@ def checkListenerExist(name, flag):
 def listListener():
     if checkListenerEmpty(1) == False:
         success("Active listeners: ")
-        print("-" * 90)
-        print('| {:<30} | {:<25} | {:<25} | {:<25} |'.format("Listner Name", "IP", "Port", "Status"))
-        print("-" * 90)
+        print("-" * 93)
+        print('| {:<20} | {:<20} | {:<20} | {:<20} |'.format("Listner Name", "IP", "Port", "Status"))
+        print("-" * 93)
         for i in listeners:
             if listeners[i].isRunning == True:
                 status = "Active"
             else:
                 status = "Stopped"
-            print('| {:<30} | {:<22} | {:<25} | {:<25} |'.format(listeners[i].name, listeners[i].ipAddress, str(listeners[i].port), status))
-        print("-" * 90)
+            print('| {:<20} | {:<20} | {:<20} | {:<20} |'.format(listeners[i].name, listeners[i].ipAddress, str(listeners[i].port), status))
+        print("-" * 93)
 
 # Start listeners
 def startListener(args):
