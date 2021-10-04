@@ -8,7 +8,8 @@ colors={
     'blue'    : '\u001b[34m',
     'magenta' : '\u001b[35m',
     'cyan'    : '\u001b[36m',
-    'reset'   : '\u001b[0m'
+    'reset'   : '\u001b[0m',
+    'bold'    : '\033[1m'
 }
 
 red     = colors['red']
@@ -18,6 +19,7 @@ blue    = colors['blue']
 magenta = colors['magenta']
 cyan    = colors['cyan']
 reset   = colors['reset']
+bold    = colors['bold']
 
 # Error message
 def error(message):
@@ -36,7 +38,7 @@ def progress(message):
 
 # Prompt
 def prompt(name):
-    output = f'[ {name} ] > '
+    output = f'{bold}{blue}[ {name} ] > {reset}'
     return output
 
 

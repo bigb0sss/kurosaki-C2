@@ -92,7 +92,7 @@ beacon_menu.registerCommand("remove", "Remove beacon", "<name>")
 
 # Listener menus
 listener_menu.registerCommand("list", "List active listeners", "")
-listener_menu.registerCommand("start", "Start a listener", "<name> <port> <interface>")
+listener_menu.registerCommand("start", "Start a listener", "<name> <IP> <port>")
 listener_menu.registerCommand("stop", "Stop an active listener","<name>")
 listener_menu.registerCommand("remove", "Remove a listener", "<name>")
 
@@ -118,6 +118,8 @@ home_Commands       = home_menu.Commands
 # Main menu
 def home():
     home_menu.clearScreen()
+    home_menu.showHelp()
+
     while True:
         try:
             command, args = home_menu.parse()
