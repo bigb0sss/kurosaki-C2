@@ -8,7 +8,7 @@ import sys
 import flask
 import pickle
 import threading
-import netifaces
+#import netifaces
 import logging
 
 from collections import OrderedDict
@@ -158,11 +158,11 @@ def listListener():
                 status = "Stopped"
             print('| {:<20} | {:<20} | {:<20} | {:<20} |'.format(listeners[i].name, listeners[i].ipAddress, str(listeners[i].port), status))
         print("-" * 93)
-        print(" ")
+        print("\n")
 
 # Start listeners
 def startListener(args):
-    # User can input 1 args for listener name
+    # Existing listener name to resume it
     if len(args) == 1:
         name = args[0]
         if listeners[name].isRunning == False:
@@ -175,24 +175,31 @@ def startListener(args):
             error(f'listener {name} is already active!')
     else:
         if len(args) != 3:
-            error("Invalid arguments! (eg., [ listeners ] > start <name> 1337 eth0)")
+            error("Invalid arguments! (eg., [ listeners ] > start <name> <IP> <port>)")
         else:
             name = args[0]
 
             try:
-                port = int(args[1])
+                ipAddress = args[1]
             except:
-                error("Invalid port entered! (eg., [ listeners ] > start <name> 1337 eth0)")
+                error("Invalid argument entered! (eg., [ listeners ] > start <name> <IP> <port>)")
                 return 0
-
-            interface = args[2]
 
             try:
-                netifaces.ifaddresses(interface)
-                ipAddress = netifaces.ifaddresses(interface)[netifaces.AF_INET][0]['addr']
+                port = int(args[2])
             except:
-                error("Invalid interface entered! (eg., [ listeners ] > start <name> 1337 eth0)")
+                error("Invalid port entered! (eg., [ listeners ] > start <name> <IP> <port>)")
                 return 0
+
+            # Getting IP Address via interface
+            # interface = args[2]
+
+            # try:
+            #     netifaces.ifaddresses(interface)
+            #     ipAddress = netifaces.ifaddresses(interface)[netifaces.AF_INET][0]['addr']
+            # except:
+            #     error("Invalid interface entered! (eg., [ listeners ] > start <name> 1337 eth0)")
+            #     return 0
 
             if checkListenerExist(name, 0):
                 error(f'listener {name} already exists!')
