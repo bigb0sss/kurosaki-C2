@@ -19,7 +19,7 @@ This project is created for me to learn how to create a Python-based C2. I came 
 
 
 # Change Log / Fix
-* [10/03/21] Initial commit on the project
+* 10/03/21 - Initial commit for the project
 
 # Credits & References
 * https://0xrick.github.io/misc/c2/#Payloads-Generator
