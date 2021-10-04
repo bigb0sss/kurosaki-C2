@@ -72,10 +72,10 @@ class Listener:
             else:
                 return('', 204) # 204 = No Content
 
-        @self.app.route("/output/<name>", methods=['POST'])
+        @self.app.route("/results/<name>", methods=['POST'])
         def receiveOutput(name):
-            output = flask.request.form.get("output")
-            outputResults(name, output)
+            result = flask.request.form.get("result")
+            outputResults(name, result)
             return('', 204) # 204 = No Content
 
         @self.app.route("/download/<name>", methods=['GET'])
