@@ -21,7 +21,7 @@ class Beacon:
         self.beaconType     = beaconType
         self.key            = key
         self.beaconSleep    = 60
-        self.beaconPath     = f'db/listeners/{self.listener}/beacon/{self.name}/'
+        self.beaconPath     = f'db/listener/{self.listener}/beacon/{self.name}/'
         self.tasksPath      = f'{self.beaconPath}tasks'
 
         if os.path.exists(self.beaconPath) == False:
@@ -58,7 +58,7 @@ class Beacon:
     # Updating a beacon
     def updateBeacon(self):
         self.menu.name  = self.name
-        self.beaconPath = f'db/listeners/{self.listener}/beacons/{self.name}/'
+        self.beaconPath = f'db/listeners/{self.listener}/beacon/{self.name}/'
         self.tasksPath  = f'{self.beaconPath}tasks'
 
         if os.path.exists(self.beaconPath) == False:
@@ -192,12 +192,12 @@ def checkBeaconExist(name, flag):
 def listBeacon():
     if checkBeaconEmpty(1) == False:
         success("Active Beacons: ")
-        print("-" * 115)
-        print('| {:<25} | {:<25} | {:<27} | {:<25} |'.format("Beacon Name", "Listener", "External IP", "Hostname"))
-        print("-" * 115)
+        print("-" * 117)
+        print('| {:<25} | {:<25} | {:<27} | {:<27} |'.format("Beacon Name", "Listener", "External IP", "Hostname"))
+        print("-" * 117)
         for i in beacons:
-            print('| {:<25} | {:<25} | {:<27} | {:<25} |'.format(beacons[i].name, beacons[i].listener, beacons[i].beaconIp, beacons[i].hostname))
-        print("-" * 115)
+            print('| {:<25} | {:<25} | {:<27} | {:<27} |'.format(beacons[i].name, beacons[i].listener, beacons[i].beaconIp, beacons[i].hostname))
+        print("-" * 117)
         print(" ")
 
 # Rename beacons
