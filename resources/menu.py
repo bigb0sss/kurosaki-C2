@@ -114,9 +114,22 @@ listener_Commands   = listener_menu.Commands
 payload_Commands    = payload_menu.Commands
 home_Commands       = home_menu.Commands
 
+# Banner
+
+def banner():
+    print
+    print("  _  __                         _    _        ____ ____   ")
+    print(" | |/ /   _ _ __ ___  ___  __ _| | _(_)      / ___|___ \  ")
+    print(" | ' / | | | '__/ _ \/ __|/ _` | |/ / |_____| |     __) | ")
+    print(" | . \ |_| | | | (_) \__ \ (_| |   <| |_____| |___ / __/  ")
+    print(" |_|\_\__,_|_|  \___/|___/\__,_|_|\_\_|      \____|_____| ")
+    print("                                            [bigb0ss]     ")
+    print                                                         
+
 # Main menu
 def home():
     home_menu.clearScreen()
+    banner()
     success("Kurosaki C2 commands: ")
     home_menu.showHelp()
 
