@@ -42,6 +42,7 @@ def listPayload():
     for i in payloads:
         print('| {:<25} | {:<65} |'.format(i, payloads[i]))
     print("-" * 97)
+    print(" ")
 
 # Generate payload
 def generatePayload(args):
