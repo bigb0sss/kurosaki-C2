@@ -1,6 +1,6 @@
 <p align="center">
     <br>
-        <img src=img/kurosaki.jpg >
+        <img src=img/kurosaki.png >
     <br>
 </p>
 
