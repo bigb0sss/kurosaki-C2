@@ -58,7 +58,7 @@ class Listener:
 
             # Save checked-in beacon to DB
             success(f'Beacon {name} checked in!')
-            writeToDB(beaconsDB, Beacon(name, self,name, beaconIp, hostname, beaconType, self.key))
+            writeToDB(beaconsDB, Beacon(name, self.name, beaconIp, hostname, beaconType, self.key))
             return (name, 200)
 
         @self.app.route("/tasks/<name>", methods=['GET'])

@@ -21,7 +21,7 @@ class Beacon:
         self.beaconType     = beaconType
         self.key            = key
         self.beaconSleep    = 60
-        self.beaconPath     = f'db/listeners/{self.listener}/beacons/{self.name}/'
+        self.beaconPath     = f'db/listeners/{self.listener}/beacon/{self.name}/'
         self.tasksPath      = f'{self.beaconPath}tasks'
 
         if os.path.exists(self.beaconPath) == False:
