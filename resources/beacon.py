@@ -192,12 +192,12 @@ def checkBeaconExist(name, flag):
 def listBeacon():
     if checkBeaconEmpty(1) == False:
         success("Active Beacons: ")
-        print("-" * 117)
-        print('| {:<25} | {:<25} | {:<27} | {:<27} |'.format("Beacon Name", "Listener", "External IP", "Hostname"))
-        print("-" * 117)
+        print("-" * 130)
+        print('| {:<25} | {:<25} | {:<27} | {:<40} |'.format("Beacon Name", "Listener", "External IP", "Hostname"))
+        print("-" * 130)
         for i in beacons:
-            print('| {:<25} | {:<25} | {:<27} | {:<27} |'.format(beacons[i].name, beacons[i].listener, beacons[i].hostname, beacons[i].beaconIp))
-        print("-" * 117)
+            print('| {:<25} | {:<25} | {:<27} | {:<40} |'.format(beacons[i].name, beacons[i].listener, beacons[i].beaconIp, beacons[i].hostname))
+        print("-" * 130)
         print(" ")
 
 # Rename beacons
