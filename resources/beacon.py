@@ -196,7 +196,7 @@ def listBeacon():
         print('| {:<20} | {:<20} | {:<20} | {:<25} |'.format("Beacon Name", "Listener", "External IP", "Hostname"))
         print("-" * 98)
         for i in beacons:
-            print('| {:<20} | {:<20} | {:<20} | {:<25} |'.format(beacons[i].name, beacons[i].listener, beacons[i].beaconIp, beacons[i].hostname))
+            print('| {:<20} | {:<20} | {:<20} | {:<25} |'.format(beacons[i].name, beacons[i].listener, beacons[i].beaconIp, (beacons[i].hostname).strip()))
         print("-" * 98)
         print(" ")
 
