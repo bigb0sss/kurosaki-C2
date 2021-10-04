@@ -53,6 +53,7 @@ class Menu:
         for i in self.commands:
             print('| {:<25} | {:<30} | {:<40} |'.format(i, self.commands[i][0], self.commands[i][1]))
         print("-" * 105)
+        print(" ")
 
     # Clear screen
     def clearScreen(self):

@@ -198,6 +198,7 @@ def listBeacon():
         for i in beacons:
             print('| {:<25} | {:<25} | {:<27} | {:<25} |'.format(beacons[i].name, beacons[i].listener, beacons[i].beaconIp, beacons[i].hostname))
         print("-" * 115)
+        print(" ")
 
 # Rename beacons
 def renameBeacon(args):

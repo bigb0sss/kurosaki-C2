@@ -158,7 +158,7 @@ def listListener():
                 status = "Stopped"
             print('| {:<20} | {:<20} | {:<20} | {:<20} |'.format(listeners[i].name, listeners[i].ipAddress, str(listeners[i].port), status))
         print("-" * 93)
-        print("\n")
+        print(" ")
 
 # Start listeners
 def startListener(args):
