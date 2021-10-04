@@ -137,6 +137,7 @@ def Exit():
 # Listener helper
 def listenersHelper():
     listener_menu.clearScreen()
+    listener_menu.showHelp()
     
     while True:
         try:
@@ -158,6 +159,7 @@ def listenersHelper():
 # Beacon helper
 def beaconHelper():
     beacon_menu.clearScreen()
+    beacon_menu.showHelp()
 
     while True:
         try:
@@ -179,6 +181,7 @@ def beaconHelper():
 # Payload helper
 def payloadsHelper():
     payload_menu.clearScreen()
+    payload_menu.showHelp()    
 
     while True:
         try:
