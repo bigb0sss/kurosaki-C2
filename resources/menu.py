@@ -36,7 +36,7 @@ class Menu:
         self.Commands = []
 
         self.commands = OrderedDict()
-        self.commands["help"] = ["Show help", ""]
+        self.commands[f'{blue}help{reset}'] = ["Show help", ""]
         self.commands["home"] = ["Return to main menu", ""]
         self.commands["exit"] = ["Exit", ""]
 
