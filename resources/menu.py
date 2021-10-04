@@ -46,7 +46,6 @@ class Menu:
 
     # Show help
     def showHelp(self):
-        success("Kurosaki C2 commands: ")
         print("-" * 105)
         print('| {:<25} | {:<30} | {:<40} |'.format("Commands", "Descriptions", "Arguments"))
         print("-" * 105)
@@ -118,6 +117,7 @@ home_Commands       = home_menu.Commands
 # Main menu
 def home():
     home_menu.clearScreen()
+    success("Kurosaki C2 commands: ")
     home_menu.showHelp()
 
     while True:
@@ -137,6 +137,7 @@ def Exit():
 # Listener helper
 def listenersHelper():
     listener_menu.clearScreen()
+    success("Listener commands: ")
     listener_menu.showHelp()
     
     while True:
@@ -159,6 +160,7 @@ def listenersHelper():
 # Beacon helper
 def beaconHelper():
     beacon_menu.clearScreen()
+    success("Beacon commands: ")
     beacon_menu.showHelp()
 
     while True:
@@ -181,6 +183,7 @@ def beaconHelper():
 # Payload helper
 def payloadsHelper():
     payload_menu.clearScreen()
+    success("Payload commands: ")
     payload_menu.showHelp()    
 
     while True:
