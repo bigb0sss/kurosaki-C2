@@ -1,4 +1,4 @@
-from db import *
+from database import *
 from util import *
 from cryptor import *
 from beacon import *
@@ -49,7 +49,7 @@ class Listener:
             with open(self.encKeyPath, "rt") as f:
                 self.key = f.read()
 
-        @self.app.route("/byakuya", methods=['POST'])
+        @self.app.route("/reg", methods=['POST'])
         def beaconAdd():
             name        = ''.join(choice(ascii_uppercase) for i in range(10))
             beaconIp    = flask.request.remote_addr

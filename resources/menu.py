@@ -2,7 +2,7 @@ from beacon import *
 from server import *
 from payload import *
 from util import *
-from db import *
+from database import *
 
 import readline
 

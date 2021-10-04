@@ -1,4 +1,4 @@
-from db import *
+from database import *
 from util import *
 from cryptor import *
 import menu

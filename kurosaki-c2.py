@@ -4,7 +4,7 @@ import os
 sys.path.append("./resources")
 
 from menu import *
-from db import *
+from database import *
 from util import *
 
 def main():
