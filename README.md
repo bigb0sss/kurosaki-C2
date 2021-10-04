@@ -13,14 +13,14 @@ This project is created for me to learn how to create a Python-based C2. I came 
 * C++ Windows Executable (Created by @0xrick)
 
 
-# ToDo
+## ToDo
 - [ ] SSL Communication
 - [ ] JScript implant implementation
 
 
-# Change Log / Fix
+## Change Log / Fix
 * 10/03/21 - Initial commit for the project
 
-# Credits & References
+## Credits & References
 * https://0xrick.github.io/misc/c2/#Payloads-Generator
 * https://github.com/0xRick/c2
