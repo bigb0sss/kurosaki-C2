@@ -102,7 +102,7 @@ class Beacon:
             writeToDB(beaconsDB, self)
 
     # Remove a beacon
-    def removeBeacon(self):
+    def quitRemoveBeacon(self):
         self.Quit()
         rmtree(self.beaconPath)
         removeFromDB(beaconsDB, self.name)
@@ -110,7 +110,7 @@ class Beacon:
         return 0
 
     # Exit a beacon
-    def exitBeacon(self):
+    def Quit(self):
         self.sendTask("quit")
         progress("Waiting for beacon to quit...")
         for i in range(self.sleep):
@@ -134,7 +134,7 @@ class Beacon:
         elif command == "clear":
             self.clearTask()
         elif command == "quit":
-            self.exitBeacon()
+            self.quitRemoveBeacon()
 
     def interact(self):
         self.menu.clearScreen()
