@@ -65,7 +65,7 @@ class Beacon:
             os.mkdir(self.beaconPath)
 
     # Renaming a beacon
-    def renameBeacon(self, newName):
+    def rename(self, newName):
         task = "Rename " + newName
         self.sendTaks(task)
         progress(f'Waiting for beacon to change the name to {newName}...')
