@@ -67,7 +67,7 @@ class Beacon:
     # Renaming a beacon
     def rename(self, newName):
         task = "Rename " + newName
-        self.sendTaks(task)
+        self.sendTask(task)
         progress(f'Waiting for beacon to change the name to {newName}...')
         while os.path.exists(self.tasksPath):
             pass
